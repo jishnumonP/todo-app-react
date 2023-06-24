@@ -63,14 +63,14 @@ function Home() {
   }, [list]);
   return (
     <section className='section-center'>
-      <form className='grocery-form' onSubmit={handleSubmit}>
+      <form className='todo-form' onSubmit={handleSubmit}>
         {alert.show && <Alert {...alert} removeAlert={showAlert} list={list} />}
 
         <h3>Todo App</h3>
         <div className='form-control'>
           <input
             type='text'
-            className='grocery'
+            className='todo'
             placeholder='Enter a task'
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -81,7 +81,7 @@ function Home() {
         </div>
       </form>
       {list.length > 0 && (
-        <div className='grocery-container'>
+        <div className='todo-container'>
           <List items={list} removeItem={removeItem} editItem={editItem} />
           <button className='clear-btn' onClick={clearList}>
             clear items
